@@ -11,6 +11,11 @@
             include_once 'topo.php';
           ?>
       </header>
+      <section id="slider">
+          <?php
+                    include_once 'slider.html';
+          ?>
+      </section>
     <main></main>
     <footer></footer>
   </body>
