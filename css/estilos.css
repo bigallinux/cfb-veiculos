@@ -1,0 +1,47 @@
+body{
+    margin: 0 auto;
+    width: 1000px;
+    background-color: #ffffff;
+    overflow: scroll;
+    overflow-x: hidden;
+    background-image: url(imgs/fundo-preto-10x120.jpg);
+    background-repeat: repeat-x;
+} 
+
+#logo_topo{
+    width: 300px;
+    height: 100px;
+    background-color: #000000;
+    background-image: url(imgs/logo.png);
+    float: left;
+}
+
+#menu{
+    width: 700px;
+    height: 100px;
+    display: table-cell;
+    background-color: #000000;
+    vertical-align: middle;
+    padding-left: 200px;
+}
+
+.btmenu{
+    text-decoration: none;
+    display: table-cell;
+    width: 100px;
+    height: 30px;
+    margin: 0px;
+    padding: 1px 5px 1px 5px;
+    background-color: #222222;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 10px;
+    color: #bbbbbb;
+    font-family: Arial;
+    font-size: 12px;
+    cursor: pointer;
+}
+.btmenu:hover{
+    background-color: #cc2222;
+    color: #ffffff;
+}
