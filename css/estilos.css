@@ -61,8 +61,43 @@ header{
     font-family: Arial;
     font-size: 12px;
     cursor: pointer;
+    border: 0px;
 }
 .btmenu:hover{
     background-color: #cc2222;
     color: #ffffff;
+}
+
+#buscador{
+    width: 1000px;
+    margin: 410px 0px 0px 0px; 
+}
+
+#fbuscador{
+    display: flex;
+    border: 1px solid #cccccc;
+    border-radius: 15px;
+    padding: 20px;
+    
+    
+}
+
+.div_busca{
+    margin: auto;
+    display: inline;
+}
+
+label {
+    display: block;
+}
+
+.titulo{
+    font-size: 22px;
+    color: #bbbbbb;
+    padding: 10px 0px 0 0;
+    margin: 
+        0px
+        0px
+        10px
+        0px;
 }
