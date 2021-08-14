@@ -23,6 +23,17 @@
                     include_once 'buscador.php';
           ?>
       </section>
+      <section id="destaques">
+          <?php
+                    include_once 'destaques.html';
+          ?>
+      </section>
+      
+      <footer>
+          <?php
+                    include_once 'rodape.html';
+          ?>
+      </footer>
       <main></main>
     <footer></footer>
   </body>
