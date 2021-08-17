@@ -169,3 +169,13 @@ footer a{
     color: #ffffff;
 }
 
+#lgErro{
+    color: #770000;
+    font-size: 20px;
+    padding: 5px;
+    border: 5px solid #888888;
+    border-radius: 10px;
+    background-color: #eeeeee;
+    text-align: center;
+    width: 300px;
+}
