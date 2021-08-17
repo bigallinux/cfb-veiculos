@@ -4,8 +4,18 @@
         $senha=$_POST["f_senha"];
         
         //mysql
+        include 'conexao.inc';
         
-        if(($user!="fbigal") or($senha!="123")){
+        $sql="select * from tb_colaboradores where username='$user' and senha='$senha';";
+        
+        $res= mysqli_query($con, $sql);
+        
+        $ret= mysqli_affected_rows($con);
+        
+        
+        //checagem de login
+        //if(($user!="fbigal") or($senha!="123")){
+        if ($ret == 0){
             echo '<p id=lgErro>Login incorreto</p>';
         }else{
             $chave1="abcdefghijklmnopqrstuvwxyz";
@@ -24,7 +34,9 @@
                 $_SESSION['username']=$user;
                 header("location:gerencimanto.php?num=$num");
         }
+        mysqli_close($con);
     }
+    
 ?>
 
 <form action="login.php" method="post" name="f_login" id="f_login">
