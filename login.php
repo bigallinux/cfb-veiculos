@@ -1,4 +1,21 @@
-<form action="#" method="post" name="f_login" id="f_login">
+<?php
+    if(isset($_POST["f_logar"])){
+        $user=$_POST["f_user"];
+        $senha=$_POST["f_senha"];
+        
+        //mysql
+        
+        if(($user!="fbigal") or($senha!="123")){
+            echo '<p id=lgErro>Login incorreto</p>';
+        }else{
+            $chave1="abcdefghijklmnopqrstuvwxyz";
+            $chave2="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            $chave3="";
+        }
+    }
+?>
+
+<form action="login.php" method="post" name="f_login" id="f_login">
               <label>Usuario</label>
               <input type="text" name="f_user">
               <label>Senha</label>
