@@ -71,7 +71,7 @@
           <div class="menu_ger">
               <button id="menuA1" class="btmenu">carros</button>
               <div  id="menuB1" class="menuB">
-                  <a href="#" target="_self">novo</a>
+                  <a href="novo_usuario.php?num=<?php echo $n1; ?>" target="_self">novo</a>
                   <a href="#" target="_self">editar</a>
                   <a href="#" target="_self">excluir</a>
                   <a href="#" target="_self">marcas</a>
