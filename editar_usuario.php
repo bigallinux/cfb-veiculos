@@ -66,7 +66,7 @@
               <input type="hidden" name="num" value="'.$n1.'">
               <input type="hidden" name="id" value="'.$exibe["id_colaborador"].'"
               <label>Nome</label>
-                <input type="text" name="f_nome" maxlength="50" size="50" required="required" value="'.$exibe["nome"].'" >
+              <input type="text" name="f_nome" maxlength="50" size="50" required="required" value="'.$exibe["nome"].'" >
               <label>UserName</label>
               <input type="text" name="f_user" maxlength="50" size="50" required="required" value="'.$exibe["username"].'">
               <label>Senha</label>
@@ -82,17 +82,22 @@
           ?>
           
           <?php
-            /*if(isset($_GET["f_bt_editar_colaborador"])){
-                $vid=$_GET["f_colaboradores"];
-                $query = "delete from tb_colaboradores where id_colaborador=$vid";
+            if(isset($_GET["f_bt_edita_colaborador"])){
+                $vid=$_GET["id"];
+                $vnome=$_GET["f_nome"];
+                $vusername=$_GET["f_user"];
+                $vsenha =$_GET["f_senha"];
+                $vacesso=$_GET["f_acesso"];
+                $query = "update tb_colaboradores set nome='$vnome', username='$vusername', senha='$vsenha', acesso=$vacesso where id_colaborador=$vid";
                 mysqli_query($con, $query);
                 $linhas= mysqli_affected_rows($con);
                 if($linhas>=1){
-                    echo'<p>Colaborador deletado com sucesso</p>';
+                    header('location:editar_usuario.php?num='.$n1);
+                    //echo'<p>Colaborador alterado com sucesso</p>';
                 }else{
-                    echo '<p>Erro ao deletar colaborador</p>';
+                    echo '<p>Erro ao tentar alterar colaborador</p>';
                 };
-            };*/
+            };
           ?>
       </section>
   </body>
