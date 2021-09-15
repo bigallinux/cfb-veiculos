@@ -49,7 +49,7 @@ header{
 .btmenu{
     text-decoration: none;
     display: table-cell;
-    width: 100px;
+    width: 120px;
     height: 30px;
     margin: 0px;
     padding: 1px 5px 1px 5px;
@@ -62,11 +62,48 @@ header{
     font-size: 12px;
     cursor: pointer;
     border: 0px;
+    text-transform: uppercase;
+    outline: none;
 }
 .btmenu:hover{
     background-color: #cc2222;
     color: #ffffff;
 }
+
+.menu_ger{
+    display: inline-block;
+    
+}
+
+.menuB{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: 120px;
+    margin: 0px;
+    padding: 0px;
+    background-color: #dddddd;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 0px;
+    visibility: hidden;
+}
+
+.menuB a{
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: Arial;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.menuB a:hover{
+    color:#ffffff;
+    font-weight: bold;
+}
+
 #buscador{
     width: 1000px;
     margin: 410px 0px 0px 0px; 
@@ -179,3 +216,4 @@ footer a{
     text-align: center;
     width: 300px;
 }
+

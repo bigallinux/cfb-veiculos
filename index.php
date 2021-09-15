@@ -12,12 +12,6 @@
           ?>
       </header>
       
-      <section id="main">
-          <?php
-                    include_once 'login.php';
-          ?>
-      </section>
-      
       <section id="slider">
           <?php
                     include_once 'slider.html';

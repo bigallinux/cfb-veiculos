@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+    <title>CFB Veiculos</title>
+  </head>
+  <body>
+      <header>
+          <?php
+            include_once 'topo.php';
+          ?>
+      </header>
+      
+
 <?php
     if(isset($_POST["f_logar"])){
         $user=$_POST["f_user"];
@@ -32,7 +47,7 @@
             session_start();
                 $_SESSION['numlogin']=$num;
                 $_SESSION['username']=$user;
-                header("location:gerencimanto.php?num=$num");
+                header("location:gerenciamento.php?num=$num");
         }
         mysqli_close($con);
     }
