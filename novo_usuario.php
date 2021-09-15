@@ -11,6 +11,7 @@
         echo '<p>Login não efetuado</p>';
             exit;
     }
+    include 'conexao.inc';
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +31,26 @@
           <a href="gerenciamento.php?num=<?php echo $n1; ?>" target="_self" class="btmenu">voltar</a>
           
           <h1>Novo Usuario</h1>
+          
+          
+          <?php
+            if(isset($_GET["f_bt_novo_colaborador"])){
+                $vnome=$_GET["f_nome"];
+                $vuser=$_GET["f_user"];
+                $vsenha=$_GET["f_senha"];
+                $vacesso=$_GET["f_acesso"];
+                
+                $query="insert into tb_colaboradores (nome, username, senha, acesso) values ('$vnome','$vuser', '$vsenha', $vacesso); ";
+                mysqli_query($con, $query);
+                $linhas= mysqli_affected_rows($con);
+                if($linhas>=1){
+                    echo '<p>Novo colaborador gravador com sucessos!</p>';
+                } else {
+                    echo '<p>Erro ao gravar novo colaborador</p>';
+                }
+                       
+            }
+          ?>
           
           <form name="f_novo_colaborador" action="novo_usuario.php" class="f_colaborador" method="get">
               <input type="hidden" name="num" value="<?php echo $n1; ?>">

@@ -71,7 +71,7 @@
           <div class="menu_ger">
               <button id="menuA1" class="btmenu">carros</button>
               <div  id="menuB1" class="menuB">
-                  <a href="novo_usuario.php?num=<?php echo $n1; ?>" target="_self">novo</a>
+                  <a href="#" target="_self">novo</a>
                   <a href="#" target="_self">editar</a>
                   <a href="#" target="_self">excluir</a>
                   <a href="#" target="_self">marcas</a>
@@ -84,15 +84,20 @@
                   
               </div>
           </div>
+          <?php
+                    if($_SESSION["acesso"]==1){
+          echo'
           <div class="menu_ger">
               <button  id="menuA3" class="btmenu">usuarios</button>
               <div id="menuB3" class="menuB">
-                  <a href="#" target="_self">novo</a>
+                  <a href="novo_usuario.php?num='.$n1.'" target="_self">novo</a>
                   <a href="#" target="_self">editar</a>
                   <a href="#" target="_self">excluir</a>
                   
               </div>
-          </div>
+          </div>';
+                    }
+                  ?>
           <div class="menu_ger">
               <button  id="menuA4" class="btmenu">logoff</button>
               <div id="menuB4" class="menuB">

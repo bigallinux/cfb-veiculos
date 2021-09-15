@@ -48,6 +48,7 @@
             session_start();
                 $_SESSION['numlogin']=$num;
                 $_SESSION['username']=$user;
+                $_SESSION['acesso']=$ret['acesso']; //0=restrito; 1 = total
                 header("location:gerenciamento.php?num=$num");
         }
         mysqli_close($con);
