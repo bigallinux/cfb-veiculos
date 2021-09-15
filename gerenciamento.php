@@ -91,7 +91,7 @@
               <button  id="menuA3" class="btmenu">usuarios</button>
               <div id="menuB3" class="menuB">
                   <a href="novo_usuario.php?num='.$n1.'" target="_self">novo</a>
-                  <a href="#" target="_self">editar</a>
+                  <a href="editar_usuario.php?num='.$n1.'" target="_self">editar</a>
                   <a href="excluir_usuario.php?num='.$n1.'" target="_self">excluir</a>
                   
               </div>
