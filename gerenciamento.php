@@ -3,6 +3,42 @@
   <head>
     <meta charset="utf-8">
     <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+    <script src="java/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#menuB1,#menuB2,#menuB3,#menuB4").css("visibility","hidden");
+            $("#menuA1").click(function(){
+                $("#menuB1").css("visibility","visible");
+                $("#menuB2").css("visibility","hidden");
+                $("#menuB3").css("visibility","hidden");
+                $("#menuB4").css("visibility","hidden");
+            });
+            $("#menuA2").click(function(){
+                $("#menuB1").css("visibility","hidden");
+                $("#menuB2").css("visibility","visible");
+                $("#menuB3").css("visibility","hidden");
+                $("#menuB4").css("visibility","hidden");
+            });
+            $("#menuA3").click(function(){
+                $("#menuB1").css("visibility","hidden");
+                $("#menuB2").css("visibility","hidden");
+                $("#menuB3").css("visibility","visible");
+                $("#menuB4").css("visibility","hidden");
+            });
+            $("#menuA4").click(function(){
+                $("#menuB1").css("visibility","hidden");
+                $("#menuB2").css("visibility","hidden");
+                $("#menuB3").css("visibility","hidden");
+                $("#menuB4").css("visibility","visible");
+            });
+            $("#menuB1,#menuB2,#menuB3,#menuB4").mouseover(function(){
+                $(this).css("visibility","visible");
+            });
+            $("#menuB1,#menuB2,#menuB3,#menuB4").mouseout(function(){
+                $(this).css("visibility","hidden");
+            });
+        });
+    </script>
     <title>CFB Veiculos</title>
   </head>
   <body>
