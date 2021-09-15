@@ -25,7 +25,8 @@
         
         $res= mysqli_query($con, $sql);
         
-        $ret= mysqli_affected_rows($con);
+        //$ret= mysqli_affected_rows($con);
+        $ret= mysqli_fetch_array($res);
         
         
         //checagem de login

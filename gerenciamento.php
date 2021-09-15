@@ -1,3 +1,18 @@
+<?php
+    session_start();
+    if(isset($_SESSION["numlogin"])){
+        $n1=$_GET["num"];
+        $n2=$_SESSION["numlogin"];
+        if($n1!=$n2){
+            echo '<p>Login não efetuado</p>';
+            exit;
+        }
+    }else{
+        echo '<p>Login não efetuado</p>';
+            exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -81,7 +96,7 @@
           <div class="menu_ger">
               <button  id="menuA4" class="btmenu">logoff</button>
               <div id="menuB4" class="menuB">
-                  <a href="" target="_self">sair</a>
+                  <a href="#" target="_self">sair</a>
               </div>
           </div>
       </nav>
