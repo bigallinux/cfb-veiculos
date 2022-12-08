@@ -19,6 +19,17 @@ include 'conexao.inc';
     <head>
         <meta charset="utf-8">
         <link href="css/estilos.css" rel="stylesheet" type="text/css"/>
+        <script>
+
+            function add() {
+                document.getElementById("f_add").style.display = "block";
+                document.getElementById("f_del").style.display = "none";
+            }
+            function del() {
+                document.getElementById("f_add").style.display = "none";
+                document.getElementById("f_del").style.display = "block";
+            }
+        </script>
     </head>
     <body>
         <header>
@@ -31,6 +42,8 @@ include 'conexao.inc';
             <a href="gerenciamento.php?num=<?php echo $n1; ?>" target="_self" class="btmenu">voltar</a>
 
             <h1>Marcas / Modelos</h1>
+            <button class="btmenu" onclick="add()">Adicionar</button>
+            <button class="btmenu" onclick="del()">Deletar</button>
 
             <?php
             if (isset($_GET["codigo"])) {
@@ -72,7 +85,7 @@ include 'conexao.inc';
                 } elseif ($vcod == 4) {
                     //deleta modelo
                     $vidmodelo = $_GET["f_id_modelo"];
-                    $vidmarca = $_GET["f_id_marcas"];
+                    $vidmarca = $_GET["f_id_marca"];
                     $sql = "delete from tb_modelos where id_modelo = $vidmodelo and id_marca = $vidmarca;";
                     mysqli_query($con, $sql);
                     $linha = mysqli_affected_rows($con);
@@ -85,8 +98,8 @@ include 'conexao.inc';
             }
             ?>
 
-            <div id="f_add">
-                <form name="f_nova_marca" action="marcas_modelos.php" method="get" class="">
+            <div id="f_add" class="f_add_del">
+                <form name="f_nova_marca" action="marcas_modelos.php" method="get" >
                     <input type="hidden" name="num" value="<?php echo $n1; ?>">
                     <input type="hidden" name="codigo" value="1">
                     <label>Nova Marca</label>
@@ -96,7 +109,7 @@ include 'conexao.inc';
 
 
                 </form>
-                <form name="f_novo_modelo" action="marcas_modelos.php" method="get" class="">
+                <form name="f_novo_modelo" action="marcas_modelos.php" method="get" >
                     <input type="hidden" name="num" value="<?php echo $n1; ?>">
                     <input type="hidden" name="codigo" value="2">
                     <label>Selecione um marca</label>
@@ -118,8 +131,8 @@ include 'conexao.inc';
 
                 </form>
             </div>
-            <div id ="f_del">
-                <form name="f_del_marca" action="marcas_modelos.php" method="get" class="">
+            <div id ="f_del" class="f_add_del">
+                <form name="f_del_marca" action="marcas_modelos.php" method="get" >
                     <input type="hidden" name="num" value="<?php echo $n1; ?>">
                     <input type="hidden" name="codigo" value="3">
                     <label>Selecione um marca</label>
@@ -137,9 +150,20 @@ include 'conexao.inc';
 
 
                 </form>
-                <form name="f_del_modelo" action="marcas_modelos.php" method="get" class="">
+                <form name="f_del_modelo" action="marcas_modelos.php" method="get" >
                     <input type="hidden" name="num" value="<?php echo $n1; ?>">
                     <input type="hidden" name="codigo" value="4">
+                    <label>Selecione um marca</label>
+                    <select name="f_id_marca" size="10" required="required">
+                        <?php
+                        $sql = "Select * from tb_marcas;";
+                        $col = mysqli_query($con, $sql);
+//$total_col= mysqli_num_rows($col);
+                        while ($exibe = mysqli_fetch_array($col)) {
+                            echo "<option value='" . $exibe['id_marca'] . "'>" . $exibe['marca'] . "</option>";
+                        }
+                        ?>
+                    </select>
                     <label>Selecione um modelo</label>
                     <select name="f_id_modelo" size="10" required="required">
                         <?php
@@ -158,5 +182,18 @@ include 'conexao.inc';
             </div>
         </section>
     </body>
+    <script>
+        document.getElementById("f_add").style.display = "none";
+        document.getElementById("f_del").style.display = "none";
+    </script>
 
+    <?php
+    if (isset($_GET["codigo"])) {
+        if (($vcod == 1)or($vcod == 2)) {
+            echo '<script>document.getElementById("f_add").style.display = "block";</script>';
+        } elseif (($vcod == 3)or($vcod == 4)) {
+            echo '<script>document.getElementById("f_del").style.display = "block";</script>';
+        }
+    }
+    ?>
 </html>
