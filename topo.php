@@ -9,7 +9,7 @@ and open the template in the editor.
 </section>
 <nav id="menu">
     <a class="btmenu" href="index.php" target="_self">Home</a>
-    <a class="btmenu" href="index.php" target="_self">Carros</a>
+    <a class="btmenu" href="carros.php" target="_self">Carros</a>
     <a class="btmenu" href="index.php" target="_self">Contatos</a>
     <a class="btmenu" href="index.php" target="_self">Localização</a>
 
